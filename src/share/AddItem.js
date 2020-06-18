@@ -23,12 +23,14 @@ class AddItem extends Component {
           onChangeText={(item) => this.setState({item})}
         />
         <TouchableOpacity
-          style={styles.addbutton}
+          style={styles.touch}
           onPress={() => {
             this.props.add(this.state.item);
             this.setState({item: null});
           }}>
-          <Text style={{fontSize: 22}}>Click to add item</Text>
+          <Text style={{fontSize: 18 }}>
+            Click to add item
+          </Text>
         </TouchableOpacity>
       </View>
     );
@@ -46,11 +48,11 @@ const styles = StyleSheet.create({
     borderRadius: 10,
     backgroundColor: 'white',
   },
-  addbutton: {
+  touch: {
     borderRadius: 10,
     borderWidth: 1,
     backgroundColor: '#cee18b',
-    width: '40%',
+    width: '60%',
     padding: 8,
     margin: 10,
     marginHorizontal: 50,

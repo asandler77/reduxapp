@@ -1,34 +1,48 @@
 import React, {Component} from 'react';
-import {StyleSheet, View, Text, FlatList, TouchableOpacity} from 'react-native';
+import {
+  StyleSheet,
+  View,
+  Text,
+  FlatList,
+  TouchableWithoutFeedback,
+  Keyboard,
+} from 'react-native';
 import AddItem from './src/share/AddItem';
 import {connect} from 'react-redux';
 import {removeItem} from './src/actions/itemAction';
-// import Icon from 'react-native-vector-icons/Feather';
-import {ListItem, Icon } from 'react-native-elements'
-
+import {ListItem, Icon} from 'react-native-elements';
 
 class App extends Component {
   render() {
     return (
-      <View style={styles.container}>
-        <Text style={styles.title}>רשימת הקניות</Text>
-        <AddItem />
-        <FlatList
-          data={this.props.items}
-          keyExtractor={(item, index) => item.key.toString()}
-          renderItem={(data) => (
-              <ListItem
+      <TouchableWithoutFeedback
+        onPress={() => {
+          Keyboard.dismiss();
+        }}>
+        <View style={styles.container}>
+          <Text>רשימת הקניות</Text>
+          <View>
+            <AddItem />
+            <FlatList
+              data={this.props.items}
+              keyExtractor={(item, index) => item.key.toString()}
+              renderItem={(data) => (
+                <ListItem
                   title={data.item.name}
                   bottomDivider
-                  rightIcon={<Icon
-                      name='delete'
+                  rightIcon={
+                    <Icon
+                      name="delete"
                       size={36}
-                      onPress={() => this.props.delete(data.item.key)} />
+                      onPress={() => this.props.delete(data.item.key)}
+                    />
                   }
-              />
-          )}
-        />
-      </View>
+                />
+              )}
+            />
+          </View>
+        </View>
+      </TouchableWithoutFeedback>
     );
   }
 }
@@ -47,11 +61,6 @@ const styles = StyleSheet.create({
     borderRadius: 10,
     width: '60%',
   },
-  title: {
-    flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center',
-  },
 });
 
 const mapStateToProps = (state) => {
@@ -64,6 +73,6 @@ const mapDispatchToProps = (dispatch) => {
   return {
     delete: (key) => dispatch(removeItem(key)),
   };
-}
+};
 
 export default connect(mapStateToProps, mapDispatchToProps)(App);
