@@ -11,7 +11,7 @@ class App extends Component {
         <Text>App page</Text>
         <AddItem />
         <FlatList
-          data={this.props.item}
+          data={this.props.items}
           keyExtractor={(item, index) => item.key.toString()}
           renderItem={(data) => (
             <Text>{data.item.name}</Text>

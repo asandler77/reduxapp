@@ -5,7 +5,7 @@ const initialState = {
 const itemReducer = (state = initialState, action) => {
   switch (action.type) {
     case 'ADDITEM':
-      console.log('ADDITEM' + action.data)
+      console.log('ADDITEM ' + action.data)
       return {
         ...state,
         itemList: state.itemList.concat({

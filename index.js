@@ -1,7 +1,3 @@
-/**
- * @format
- */
-
 import {AppRegistry} from 'react-native';
 import React from 'react';
 import App from './App';
@@ -11,10 +7,10 @@ import configureStore from './src/storeForCombine';
 
 const store = configureStore();
 
-const reduxTutorial = () => (
+const reduxTutorial = () =>
   <Provider store={store}>
     <App />
   </Provider>
-);
+
 
 AppRegistry.registerComponent(appName, () => reduxTutorial);
