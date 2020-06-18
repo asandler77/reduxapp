@@ -8,24 +8,13 @@ class App extends Component {
   render() {
     return (
       <View style={styles.container}>
-        <Text>App page</Text>
+        <Text style={styles.title}>רשימת הקניות</Text>
         <AddItem />
         <FlatList
           data={this.props.items}
           keyExtractor={(item, index) => item.key.toString()}
           renderItem={(data) => (
-            <Text>{data.item.name}</Text>
-            // <ListItem
-            //   title={data.item.name}
-            //   bottomDivider
-            //   rightIcon={
-            //     <Icon
-            //       name="delete"
-            //       size={36}
-            //       onPress={() => this.props.delete(data.item.key)}
-            //     />
-            //   }
-            // />
+            <Text style={styles.item}>{data.item.name}</Text>
           )}
         />
       </View>
@@ -37,6 +26,20 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     backgroundColor: '#ddd',
+  },
+  item: {
+    backgroundColor: '#f5f6dc',
+    marginTop: 16,
+    marginHorizontal: 50,
+    padding: 16,
+    borderWidth: 1,
+    borderRadius: 10,
+    width: '60%',
+  },
+  title: {
+    flex: 1,
+    justifyContent: 'center',
+    alignItems: 'center',
   },
 });
 
