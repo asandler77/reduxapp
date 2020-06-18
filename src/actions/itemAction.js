@@ -1,9 +1,9 @@
 export const addItem = (text) => ({
   type: 'ADDITEM',
-  payload: text,
+  data: text,
 });
 
-export const removeItem = (text) => ({
+export const removeItem = (key) => ({
   type: 'REMOVEITEM',
-  payload: text,
+  data: key,
 });

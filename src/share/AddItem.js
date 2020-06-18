@@ -25,7 +25,7 @@ class AddItem extends Component {
         <TouchableOpacity
           onPress={() => {
             this.props.add(this.state.item);
-            this.setState({food: null});
+            this.setState({item: null});
           }}>
           <Text>Click to add item</Text>
         </TouchableOpacity>
@@ -35,6 +35,8 @@ class AddItem extends Component {
 }
 
 const mapStateToProps = (state) => {
+  console.log('Add item ' + state);
+
   return {
     items: state.itemReducer.itemList,
   };
