@@ -5,5 +5,5 @@ export const addItem = (text) => ({
 
 export const removeItem = (key) => ({
   type: 'REMOVEITEM',
-  data: key,
+  key: key,
 });

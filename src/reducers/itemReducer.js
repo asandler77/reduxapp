@@ -14,6 +14,7 @@ const itemReducer = (state = initialState, action) => {
         }),
       };
     case 'REMOVEITEM':
+      console.log('REMOVEITEM ' + action.data)
       return {
         ...state,
         itemList: state.itemList.filter((item) => item.key !== action.key),

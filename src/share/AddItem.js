@@ -7,7 +7,7 @@ import {
   TouchableOpacity,
 } from 'react-native';
 import {connect} from 'react-redux';
-import {addItem} from '../actions/itemAction';
+import {addItem, removeItem} from '../actions/itemAction';
 
 class AddItem extends Component {
   state = {
@@ -23,12 +23,12 @@ class AddItem extends Component {
           onChangeText={(item) => this.setState({item})}
         />
         <TouchableOpacity
-            style={styles.addbutton}
+          style={styles.addbutton}
           onPress={() => {
             this.props.add(this.state.item);
             this.setState({item: null});
           }}>
-          <Text>Click to add item</Text>
+          <Text style={{fontSize: 22}}>Click to add item</Text>
         </TouchableOpacity>
       </View>
     );
@@ -54,14 +54,11 @@ const styles = StyleSheet.create({
     padding: 8,
     margin: 10,
     marginHorizontal: 50,
-    fontSize: 32,
     marginBottom: 32,
   },
 })
 
 const mapStateToProps = (state) => {
-  console.log('Add item ' + state);
-
   return {
     items: state.itemReducer.itemList,
   };
