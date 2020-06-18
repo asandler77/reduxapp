@@ -28,7 +28,8 @@ class AddItem extends Component {
             this.props.add(this.state.item);
             this.setState({item: null});
           }}>
-          <Text style={{fontSize: 18 }}>
+          <Text style={{fontSize: 18, textAlign: 'center'
+          }}>
             Click to add item
           </Text>
         </TouchableOpacity>
@@ -39,7 +40,7 @@ class AddItem extends Component {
 
 const styles = StyleSheet.create({
   itemInput: {
-    fontSize: 32,
+    fontSize: 22,
     marginBottom: 32,
     marginHorizontal: 50,
     borderWidth: 1,

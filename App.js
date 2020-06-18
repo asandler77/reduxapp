@@ -20,7 +20,7 @@ class App extends Component {
           Keyboard.dismiss();
         }}>
         <View style={styles.container}>
-          <Text>רשימת הקניות</Text>
+          <Text style={styles.title}>רשימת הקניות</Text>
           <View>
             <AddItem />
             <FlatList
@@ -57,6 +57,15 @@ const styles = StyleSheet.create({
     marginTop: 16,
     marginHorizontal: 50,
     padding: 16,
+    borderWidth: 1,
+    borderRadius: 10,
+    width: '60%',
+  },
+  title: {
+    fontSize: 30,
+    textAlign: 'center',
+  },
+  listitem: {
     borderWidth: 1,
     borderRadius: 10,
     width: '60%',
