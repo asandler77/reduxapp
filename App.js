@@ -11,6 +11,7 @@ import AddItem from './src/share/AddItem';
 import {connect} from 'react-redux';
 import {removeItem} from './src/actions/itemAction';
 import {ListItem, Icon} from 'react-native-elements';
+import Header from './src/share/header';
 
 class App extends Component {
   render() {
@@ -19,8 +20,8 @@ class App extends Component {
         onPress={() => {
           Keyboard.dismiss();
         }}>
-        <View style={styles.container}>
-          <Text style={styles.title}>רשימת הקניות</Text>
+        <View>
+          <Header />
           <View>
             <AddItem />
             <FlatList
@@ -60,10 +61,6 @@ const styles = StyleSheet.create({
     borderWidth: 1,
     borderRadius: 10,
     width: '60%',
-  },
-  title: {
-    fontSize: 30,
-    textAlign: 'center',
   },
   listitem: {
     borderWidth: 1,

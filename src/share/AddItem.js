@@ -18,7 +18,7 @@ class AddItem extends Component {
       <View>
         <TextInput
           style={styles.itemInput}
-          placeholder="... Add new item"
+          placeholder="... Добавить "
           value={this.state.item}
           onChangeText={(item) => this.setState({item})}
         />
@@ -28,8 +28,7 @@ class AddItem extends Component {
             this.props.add(this.state.item);
             this.setState({item: null});
           }}>
-          <Text style={{fontSize: 18, textAlign: 'center'
-          }}>
+          <Text style={{fontSize: 18, textAlign: 'center'}}>
             Click to add item
           </Text>
         </TouchableOpacity>
