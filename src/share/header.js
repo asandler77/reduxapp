@@ -6,8 +6,8 @@ class Header extends Component {
   render() {
     return (
       <View>
-        <Text style={styles.title}>רשימת הקניות</Text>
-        <Text> You have {this.props.amount} items to bue. </Text>
+        <Text style={styles.title}>Shopping list</Text>
+        <Text> You have {this.props.amount} items to buy. </Text>
       </View>
     );
   }
